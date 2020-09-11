@@ -21,10 +21,11 @@ app.use(express.json());
 app.get('/allLessons/:studentId', (req, res) => {
   students.forEach(student => {
     console.log(req.params.studentId)
-    if (student.id.toString() === req.params.studentId.toString())
-      return res.status(200).json(student1);
-  });
-  return res.status(400).json("No student found.");
+    if (student.id.toString() === req.params.studentId.toString()){
+      res.status(200).json(student1);
+      return;
+  }});
+  //res.status(400).json("No student found.");
 });
 
 // Get specific lesson for a student
@@ -34,10 +35,11 @@ app.get('/lesson/:studentId/:id', (req, res) => {
     if (student.id.toString() === req.params.studentId.toString()) {
       student.lessons.forEach(lesson => {
         if (lesson.id.toString() === req.params.id.toString()) {
-          return res.status(200).json(lesson);
+          res.status(200).json(lesson);
+          return;
         }
       });
     }
   });
-  return res.status(400).json("No lesson found.");
+  //res.status(400).json("No lesson found.");
 })
