@@ -74,12 +74,34 @@ app.post('/lesson/:studentId', (req, res) => {
 
 // Handle a new student signing up
 app.post('/signup', (req, res) => {
-  console.log(req.body);
+  console.log("Req body", req.body);
+  if (!req.body || !req.body.tutorKey || !req.body.grade || !req.body.name || !req.body.id)
+    return res.status(400).json({"success": false, "message": "Missing request body information"});
+
+  let chosenTutor = tutors.find(tutor => tutor.tutorKey.toString() === req.body.tutorKey.toString());
+  if (!chosenTutor)
+    return res.status(400).json({"success": false, "message": "Invalid tutor key"});
+  
+  // If tutor key exists, add student to students list
   students.push({
     ...req.body,
     lessons: []
   });
-  console.log(students);
+  console.log("Students:", students);
 
   // If tutor key exists, add student's id to that tutor's studentLi
-})
+  chosenTutor.students.push(req.body.id);
+  tutors[tutors.findIndex(tutor => tutor.tutorKey.toString() === req.body.tutorKey.toString())] = chosenTutor;
+
+  console.log("\nTutors:", tutors)
+  return res.status(200).json({"success": true, "message": "New student created"});
+});
+
+// Get tutor id for a specific student
+app.get('/tutorId/:studentId', (req, res) => {
+  let chosenTutor = tutors.find(tutor => tutor.students.includes(req.params.studentId));
+  if (chosenTutor)
+    return res.status(200).json({tutorId: chosenTutor.id});
+    
+  return res.status(400).json("Couldn't identify a tutor for this student");
+});
