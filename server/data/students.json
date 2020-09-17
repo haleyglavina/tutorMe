@@ -6,29 +6,48 @@
   "lessons": [
     {
       "id": 1,
-      "elementLi":
-        [
+      "elementLi": [
           {
-            "tag": "h1",
-            "content": "Bella's First Lesson"
+              "tag": "h1",
+              "content": "Euler's Formula"
           },
           {
-            "tag": "date",
-            "content": "Mon Sept 7 2020"
+              "tag": "date",
+              "content": "Mon Sep 7 2020"
           },
           {
-            "tag": "p",
-            "content": "Question 1: What is the sqrt of 9?"
+              "tag": "h2",
+              "content": "Background"
           },
           {
-            "tag": "h2",
-            "content": "This is Bella's subheading!"
+              "tag": "p",
+              "content": "Euler's formula relates the complex exponential to the cosine and sine functions. This formula is the most important tool in AC analysis. It is why electrical engineers need to understand complex numbers."
           },
           {
-            "tag": "MathDox",
-            "content": "<OMOBJ xmlns='http://www.openmath.org/OpenMath'><OMA><OMS cd='arith1' name='sum'/><OMA><OMS cd='interval1' name='integer_interval'/><OMI>1</OMI><OMI>3</OMI></OMA><OMBIND><OMS cd='fns1' name='lambda'/><OMBVAR><OMV name='n'/></OMBVAR><OMA><OMS cd='arith1' name='power'/><OMV name='x'/><OMV name='n'/></OMA></OMBIND></OMA></OMOBJ>"
+              "tag": "p",
+              "content": "It looks like:"
+          },
+          {
+              "tag": "MathDox",
+              "content": "<OMOBJ xmlns='http://www.openmath.org/OpenMath' version='2.0' cdbase='http://www.openmath.org/cd'><OMA><OMS cd='relation1' name='eq'/><OMA><OMS cd='arith1' name='power'/><OMS cd='nums1' name='e'/><OMV name='ix'/></OMA><OMA><OMS cd='arith1' name='plus'/><OMA><OMS cd='transc1' name='cos'/><OMV name='x'/></OMA><OMA><OMV name='isin'/><OMV name='x'/></OMA></OMA></OMA></OMOBJ>"
+          },
+          {
+              "tag": "p",
+              "content": "Also represented as:"
+          },
+          {
+              "tag": "MathDox",
+              "content": "<OMOBJ xmlns='http://www.openmath.org/OpenMath' version='2.0' cdbase='http://www.openmath.org/cd'><OMA><OMS cd='relation1' name='eq'/><OMA><OMS cd='calculus1' name='int'/><OMBIND><OMS cd='fns1' name='lambda'/><OMBVAR><OMV name='x'/></OMBVAR><OMA style='mfrac'><OMS cd='arith1' name='divide'/><OMI>1</OMI><OMA><OMS cd='arith1' name='plus'/><OMI>1</OMI><OMA><OMS cd='arith1' name='times'/><OMV name='a'/><OMV name='x'/></OMA></OMA></OMA></OMBIND></OMA><OMA><OMS cd='arith1' name='plus'/><OMA style='invisible'><OMS cd='arith1' name='times'/><OMA style='mfrac'><OMS cd='arith1' name='divide'/><OMI>1</OMI><OMV name='a'/></OMA><OMA><OMS cd='transc1' name='ln'/><OMA><OMS cd='arith1' name='plus'/><OMI>1</OMI><OMA><OMS cd='arith1' name='times'/><OMV name='a'/><OMV name='x'/></OMA></OMA></OMA></OMA><OMV name='C'/></OMA></OMA></OMOBJ>"
+          },
+          {
+              "tag": "h2",
+              "content": "Uses"
+          },
+          {
+              "tag": "p",
+              "content": "Converting cos and sin functions to exponentials. Used in frequency analysis of electrical signals."
           }
-        ]
+      ]
     },
     {
       "id": 2,
@@ -36,7 +55,7 @@
         [
           {
             "tag": "h1",
-            "content": "Bella's second Lesson"
+            "content": "Pythagorean Theorem"
           },
           {
             "tag": "date",
@@ -58,7 +77,7 @@
         [
           {
             "tag": "h1",
-            "content": "Another one"
+            "content": "Straight Line Formula"
           },
           {
             "tag": "date",
