@@ -64,9 +64,12 @@ app.post('/lesson/:studentId', (req, res) => {
     if (student.id.toString() === req.params.studentId.toString()) {
       // Add new lesson to its list of lessons
       student.lessons = student.lessons.concat({
-        id: student.lessons[student.lessons.length - 1].id + 1,
+        id: ((student.lessons[student.lessons.length - 1] 
+              && student.lessons[student.lessons.length - 1].id
+             ) || 0) + 1,
         elementLi: req.body.elementLi
       });
+      console.log("Updated student obj:", student);
       return res.status(200).json("Added new lesson to memory");
   }});
   //res.status(400).json("Failed to save lesson");
@@ -102,6 +105,6 @@ app.get('/tutorId/:studentId', (req, res) => {
   let chosenTutor = tutors.find(tutor => tutor.students.includes(req.params.studentId));
   if (chosenTutor)
     return res.status(200).json({tutorId: chosenTutor.id});
-    
+
   return res.status(400).json("Couldn't identify a tutor for this student");
 });
