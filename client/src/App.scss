@@ -1,0 +1,17 @@
+@import './partials/variables';
+@import './partials/typography';
+
+.App {
+  text-align: center;
+}
+
+main {
+  background-color: $main-bg;
+  margin: 0;
+  min-height: calc(100vh-64px);
+  width: 100vw;
+}
+
+main * {
+  box-sizing: border-box;
+}

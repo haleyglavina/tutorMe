@@ -1,0 +1,48 @@
+@import '../../partials/variables';
+
+.old-doc {
+  height: 100vh;
+
+  &__btn {
+    padding: 0.5rem 0.5rem 0.5rem 1.3rem;
+    margin-right: 1rem;
+    background-color: $main-text;
+    border: none;
+    outline: none;
+    color: $accent-text;
+    border-radius: $small-radius;
+    font-weight: bold;
+    font-size: 0.8rem;
+    margin: 1rem;
+
+    &:hover {
+      background-color: $accent-one;
+    }
+
+    &::before {
+      content: "";
+      background-image: url('../../assets/back.svg');
+      height: 13px;
+      width: 13px;
+      top: 33px;
+      left: 27px;
+      position: absolute;
+    }
+  }
+
+  &__options {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__doc {
+    margin: -2.8rem auto 0 auto;
+    width: 900px;
+    height: calc(100vh - 2rem);
+    overflow: scroll;
+  }
+}
+
+.old-doc__doc .formulaeditorpalette {
+  display: none;
+}

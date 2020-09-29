@@ -1,0 +1,53 @@
+@import '../../partials/variables';
+
+.new-doc {
+  display: flex;
+
+  &__doc {
+    margin: 1rem auto;
+    overflow: scroll;
+    width: 900px;
+    height: calc(100vh - 2rem);
+  }
+
+}
+
+.controls {
+  width: 35%;
+  padding: 1rem;
+
+  &__title-box {
+    display: flex;
+  }
+
+  &__icon {
+    width: 80px;
+    padding: 0 20px;
+  }
+
+  &__btns {
+    margin-bottom: 2rem;
+  }
+
+  &__btn {
+    padding: 0.5rem;
+    margin-right: 1rem;
+    background-color: $main-text;
+    border: none;
+    outline: none;
+    color: $accent-text;
+    border-radius: $small-radius;
+    font-weight: bold;
+
+    &:hover {
+      background-color: $accent-one;
+    }
+  }
+
+  &__panel-space {
+    // 552px X 256px for the formula panel
+    width: 552px;
+    height: 290px;
+    margin: auto;
+  }
+}

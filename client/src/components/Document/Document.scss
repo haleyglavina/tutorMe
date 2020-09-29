@@ -1,0 +1,50 @@
+.doc {
+  background-color: white;
+  min-height: 1000px;
+  padding: 1rem;
+  padding-bottom: 20rem;
+  margin: 0;
+  color: black;
+  text-align: left;
+
+  * {
+    color: black;
+  }
+
+  &__title {
+    text-align: center;
+    margin-bottom: 0;
+  }
+
+  &__date {
+    text-align: center;
+    font-size: 0.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  &__subhead {
+    margin: 2rem 0 0.5rem 0;
+  }
+
+  &__text {
+    text-align: left;
+    margin: 0.5rem;
+    font-size: 1rem;
+
+    &--student {
+      color: #666;
+    }
+
+    &--teacher {
+      color: purple;
+    }
+  }
+}
+
+.mathdoxformula {
+  border: 1px solid rgb(153, 153, 255);
+  vertical-align: middle;
+  cursor: text;
+  padding: 0px;
+  width: 100%;
+}
