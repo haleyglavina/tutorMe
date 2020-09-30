@@ -8,7 +8,6 @@ import { AuthContext } from '../../utils/Auth';
 
 function MyStudents() {
   const [studentLi, setStudentLi] = useState(null);
-  //const {tutorId} = useParams();
   const { currentUser, isTutor, tutorId } = useContext(AuthContext);
 
   useEffect(() => {
@@ -28,7 +27,7 @@ function MyStudents() {
           <ul className="student-card">
             {studentLi 
               ? studentLi.map((student) => (
-                <Link to={`/${student.id}/${tutorId}`} className="link">
+                <Link to={`/${student.id}`} className="link">
                   <li className="student-card__li" key={student.id} >
                     <div className="student-card__doc">
                       <img src={user} alt="Profile Pic" className="student-card__pic" />

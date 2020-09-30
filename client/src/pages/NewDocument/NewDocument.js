@@ -64,7 +64,7 @@ function NewDocument(props) {
   }
 
   if (shouldRedirect)
-    return <Redirect to={`/${studentId}/${tutorId}`} />
+    return <Redirect to={`/${studentId}`} />
 
   return (
     <main className="new-doc">

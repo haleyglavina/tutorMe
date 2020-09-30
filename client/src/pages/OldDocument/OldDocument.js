@@ -27,7 +27,7 @@ function OldDocument(props) {
   return (
     <main className="old-doc">
       <div className="old-doc__options">
-        <Link to={`/${studentId}/${tutorId}`}>
+        <Link to={`/${studentId}`}>
           <button className="old-doc__btn">All Lessons</button>
         </Link>
       </div>

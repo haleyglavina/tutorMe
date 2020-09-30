@@ -25,7 +25,7 @@ function BrowseDocuments() {
           <div className="browse__new">
             <h2 className="browse__subhead">New Lesson</h2>
             {student 
-              ? <Link to={`/${studentId}/new/${tutorId}`} className="link">
+              ? <Link to={`/${studentId}/new`} className="link">
                   <div className="mock-doc__new">
                     <p className="prev-docs__title">Start a new Lesson</p>
                     <img src={plus} className="plus-icon"></img>
@@ -41,7 +41,7 @@ function BrowseDocuments() {
             <ul className="prev-docs">
               {student 
                 ? student.lessons.map((lesson, i) => (
-                  <Link to={`/${student.id}/${lesson.id}/${tutorId}`} className="link">
+                  <Link to={`/${student.id}/${lesson.id}`} className="link">
                     <li className="prev-docs__li" key={lesson.id} >
                       <div className="prev-docs__doc">
                         <p className="prev-docs__title">{lesson.elementLi[0].content || `Lesson ${i}`}</p>

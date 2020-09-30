@@ -51,7 +51,7 @@ function Nav() {
       </div>
       <div className="nav-bar__options">
         {isTutor
-          ? <Link className="nav-bar__link" to={`/myStudents/${tutorId}`}>
+          ? <Link className="nav-bar__link" to={`/myStudents`}>
               <p className="nav-bar__option">My Students</p>
             </Link>
           : null

@@ -18,10 +18,10 @@ function App() {
         <Switch >
           <Route path='/sign-in' exact component={SignIn} />
           <Route path='/sign-up' exact component={SignUp} />
-          <PrivateRoute path='/myStudents/:tutorId' exact component={MyStudents} /> {/* Should be the only one with /:tutorId eventually */}
-          <PrivateRoute path='/:studentId/new/:tutorId' exact component={NewDocument} />
-          <PrivateRoute path='/:studentId/:lessonId/:tutorId' exact component={OldDocument} />
-          <PrivateRoute path='/:studentId/:tutorId' exact component={BrowseDocuments} />
+          <PrivateRoute path='/myStudents' exact component={MyStudents} /> {/* Should be the only one with /:tutorId eventually */}
+          <PrivateRoute path='/:studentId/new' exact component={NewDocument} />
+          <PrivateRoute path='/:studentId/:lessonId' exact component={OldDocument} />
+          <PrivateRoute path='/:studentId' exact component={BrowseDocuments} />
           <Route path='/' exact component={Landing} />
         </Switch>
       </BrowserRouter>

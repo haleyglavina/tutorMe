@@ -8,6 +8,8 @@ import axios from 'axios';
 
 const SignIn = ({ history }) => {
 
+  const { currentUser, isTutor, tutorId } = useContext(AuthContext);
+
   const handleLogin = useCallback(
     async event => {
       event.preventDefault();
@@ -19,8 +21,8 @@ const SignIn = ({ history }) => {
         // try making than a .then instead
         history.push(
           isTutor 
-          ? `/myStudents/${currentUser && currentUser.uid}`
-          : `/${currentUser && currentUser.uid}/${tutorId}`
+          ? `/myStudents`
+          : `/${currentUser && currentUser.uid}`
         );
       } catch (error) {
         alert(error);
@@ -29,13 +31,13 @@ const SignIn = ({ history }) => {
     [history]
   );
 
-  const { currentUser, isTutor, tutorId } = useContext(AuthContext);
+  // const { currentUser, isTutor, tutorId } = useContext(AuthContext);
 
   if (currentUser && tutorId) {
     return <Redirect to={
       isTutor 
-      ? `/myStudents/${currentUser && currentUser.uid}`
-      : `/${currentUser && currentUser.uid}/${tutorId}`} 
+      ? `/myStudents`
+      : `/${currentUser && currentUser.uid}`} 
     />;
   }
 
